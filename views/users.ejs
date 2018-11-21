@@ -1,0 +1,26 @@
+<%- include partials/header %>
+
+<div class="columns">
+    <div class="column is-12">
+        <% if(users.length) { %>
+        <table class="table is-striped is-fullwidth is-hoverable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <th><%= user.name %></th>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <span>No users found</span>
+        <% } %>
+    </div>
+</div>
+
+<%- include partials/footer.ejs %>

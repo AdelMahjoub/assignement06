@@ -1,0 +1,30 @@
+<nav class="navbar is-fixed-top is-dark">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">Assignement 06</a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <a 
+                href="/" 
+                class="navbar-item <%= _locals.path === '/' ? 'is-active' : '' %>">Add</a>
+                <a href="/users" class="navbar-item <%= _locals.path === '/users' ? 'is-active' : '' %>">List</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const navbarBurger = document.querySelector('.navbar-burger');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    navbarBurger.addEventListener('click', function(e) {
+        navbarMenu.classList.contains('is-active') ?
+            navbarMenu.classList.remove('is-active') :
+            navbarMenu.classList.add('is-active')
+    });
+</script>
